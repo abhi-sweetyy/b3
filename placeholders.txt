@@ -1,0 +1,13 @@
+Here are the present placeholders are:
+{phone_number}
+{email_address}
+{website_name}
+{title}
+{address}
+{shortdescription} - Short description mentioning {Realestate_type} and {rent_or_sale} and location
+{price}
+{date_available}
+{name_brokerfirm}
+(descriptionlarge} - Site plan of the building & Position
+{descriptionextralarge}
+{address_brokerfirm}

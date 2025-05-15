@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Google Slides in Deutsch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loader"></div>
+        <p>Öffne Google Slides mit deutscher Benutzeroberfläche...</p>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the presentation ID from the URL
+        const presentationId = getUrlParam('id');
+        
+        if (presentationId) {
+            // Use the EXACT same parameters as English, just with German language
+            const slidesUrl = `https://docs.google.com/presentation/d/${presentationId}/edit?hl=de&usp=sharing&rm=demo&ui=2&authuser=0`;
+            
+            // Open Google Slides in the current window
+            window.location.href = slidesUrl;
+        } else {
+            document.querySelector('p').textContent = 'Fehler: Keine Präsentations-ID angegeben';
+        }
+    </script>
+</body>
+</html> 
